@@ -1,8 +1,22 @@
 [gd_scene format=3 uid="uid://cbg4wifbdxxax"]
 
 [ext_resource type="Script" uid="uid://d1hlow3ktbgjd" path="res://scripts/game_manager.gd" id="1_76guv"]
+[ext_resource type="PackedScene" uid="uid://ceanfalatbfpd" path="res://scenes/rogue_hooded.tscn" id="2_g6lxj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g6lxj"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_l1cpo"]
+sky_material = SubResource("ProceduralSkyMaterial_g6lxj")
+
+[sub_resource type="Environment" id="Environment_2mxnn"]
+background_mode = 2
+sky = SubResource("Sky_l1cpo")
 
 [sub_resource type="BoxMesh" id="BoxMesh_jyhfb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jyhfb"]
 
 [node name="GameManager" type="Control" unique_id=127075380]
 layout_mode = 3
@@ -13,8 +27,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_76guv")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2043239744]
+environment = SubResource("Environment_2mxnn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1994149323]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
 [node name="TestEnvironment" type="Node3D" parent="." unique_id=1216730294]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestEnvironment" unique_id=1791108570]
-transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 4, 0, -0.13592005, -8.819152)
 mesh = SubResource("BoxMesh_jyhfb")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="TestEnvironment" unique_id=861940758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -1.459)
+use_collision = true
+size = Vector3(10, 1, 10)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="TestEnvironment" unique_id=717776978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9280028, 1.1112113, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestEnvironment/CharacterBody3D" unique_id=125812437]
+transform = Transform3D(0.7, 0, 0, 0, 2, 0, 0, 0, 0.7, 0, 1, 0)
+shape = SubResource("BoxShape3D_jyhfb")
+
+[node name="Rogue_Hooded" parent="TestEnvironment/CharacterBody3D" unique_id=1546527616 instance=ExtResource("2_g6lxj")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=421607281]
+transform = Transform3D(-0.8890172, -0.10494486, 0.44568482, 0, 0.97337925, 0.22920044, -0.45787376, 0.20376313, -0.86535096, -1.1932485, 0.76535493, -9.367651)

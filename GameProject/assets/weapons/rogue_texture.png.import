@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crq5hxbkulb0d"
-path.s3tc="res://.godot/imported/Rogue_rogue_texture.png-aeb398a57703f819e94b83fd4c42d295.s3tc.ctex"
+uid="uid://dvpsi82dvkk2m"
+path.s3tc="res://.godot/imported/rogue_texture.png-c93c323b8cdba7c260874ed39de8930c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "e24a3d2f6e39f79ab8c3dab2f3ab950f"
-}
 
 [deps]
 
-source_file="res://assets/meshes/Rogue_rogue_texture.png"
-dest_files=["res://.godot/imported/Rogue_rogue_texture.png-aeb398a57703f819e94b83fd4c42d295.s3tc.ctex"]
+source_file="res://assets/weapons/rogue_texture.png"
+dest_files=["res://.godot/imported/rogue_texture.png-c93c323b8cdba7c260874ed39de8930c.s3tc.ctex"]
 
 [params]
 
