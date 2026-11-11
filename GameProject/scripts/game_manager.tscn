@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cbg4wifbdxxax"]
+
+[ext_resource type="Script" uid="uid://d1hlow3ktbgjd" path="res://scripts/game_manager.gd" id="1_76guv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jyhfb"]
+
+[node name="GameManager" type="Control" unique_id=127075380]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_76guv")
+
+[node name="TestEnvironment" type="Node3D" parent="." unique_id=1216730294]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestEnvironment" unique_id=1791108570]
+transform = Transform3D(4, 0, 0, 0, 0.1, 0, 0, 0, 4, 0, 0, 0)
+mesh = SubResource("BoxMesh_jyhfb")

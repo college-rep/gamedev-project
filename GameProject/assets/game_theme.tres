@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://d13yx452gaagk"]
+
+[ext_resource type="FontFile" uid="uid://wmh8pws56scy" path="res://assets/fonts/Lora/static/Lora-Bold.ttf" id="1_tgk0f"]
+
+[resource]
+Button/fonts/font = ExtResource("1_tgk0f")
